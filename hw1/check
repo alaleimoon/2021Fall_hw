@@ -1,0 +1,94 @@
+/home/classes/cs223/Hwk1/test.Statements
+Executing /home/classes/cs223/Hwk1/test.Statements
+
+Public test script for Statements (09/08/2021)
+
+***** Checking for warning messages *****
+Making -B ./Statements
+gcc -c  statements.o statements.c
+gcc: warning: statements.o: linker input file unused because linking not done
+gcc -o  Statements statements.o
+makewarn: warning messages from -std=c11 -pedantic -Wall
+
+Each test is either passed or failed; there is no partial credit.
+
+To execute the test labelled IJ, type one of the following commands
+depending on whether the file /c/cs223/hw1/Tests/tIJ is executable or not
+     /c/cs223/hw1/Tests/tIJ
+     ./Statements < /c/cs223/hw1/Tests/tIJ
+The answer expected is in /c/cs223/hw1/Tests/tIJ.out.
+
+
+           Straightforward cases (50 points)
+PASSED  001. Declaration
+PASSED  002. Two declarations
+PASSED  003. Empty function
+PASSED  004. Non-empty function
+PASSED  005. Mixed functions, declarations, statements
+PASSED  006. Poor formatting
+
+           Straightforward cases (50 points): 50 points
+
+           Comments (20 points)
+PASSED  007. Semi-colons in C comments
+PASSED  008. Semi-colons in C++ comments
+PASSED  009. Semi-colons in multiline C comment
+PASSED  010. Open brace in C comment
+PASSED  011. Open brace in C++ comment
+
+           Comments (20 points): 20 points
+
+           String and character literals (15 points)
+PASSED  012. Semi-colon in string literal
+PASSED  013. Open brace in char literal
+PASSED  014. Escape character in string literal
+
+           String and character literals (15 points): 15 points
+
+           For loops (15 points)
+PASSED  015. Basic for loop
+PASSED  016. For loop with line breaks
+PASSED  017. For loop with function calls
+PASSED  018. For loop with character literal
+PASSED  019. Closing parenthesis in literal in loop header
+
+           For loops (15 points): 15 points
+
+           Large Inputs (-20 points; indicates more than O(1) memory)
+PASSED  020. Long file
+PASSED  021. Long line
+
+           Large Inputs (-20 points; indicates more than O(1) memory): 0 points
+
+           Digraphs
+PASSED  022. Non-empty function
+
+           Digraphs: 1 of 1 tests passed
+
+           Line continuation
+PASSED  023. In C++ Comment
+
+           Line continuation: 1 of 1 tests passed
+
+               Deductions for Violating Specification (0 => no violation)
+
+End of Public Script
+
+ Total score at first checkpoint: 100
+  2 of   2 Additional tests passed for Statements
+
+           Possible Deductions (assessed later as appropriate)
+               -10 Deficient style (comments, identifiers, formatting, ...)
+                -5 Does not make
+                -5 Makefile missing
+                -5 Makefile incorrect
+                -1 Log file incorrectly named
+                -1 Log file lacks estimated time
+                -1 Log file lacks total time
+                -1 Log file lacks statement of major difficulties
+
+***** Checking log file *****
+Estimate: ESTIMATE of time to complete assignment: 10 hours
+Total: 4:30  TOTAL time spent
+
+***** Checking makefile *****

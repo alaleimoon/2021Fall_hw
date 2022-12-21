@@ -1,0 +1,26 @@
+==314867== Cachegrind, a cache and branch-prediction profiler
+==314867== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==314867== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
+==314867== Command: ./TrackUnit 100 640 1
+==314867== Parent PID: 314866
+==314867== 
+--314867-- warning: L3 cache found, using its data for the LL simulation.
+==314867== brk segment overflow in thread #1: can't grow to 0x4853000
+==314867== (see section Limitations in user manual)
+==314867== NOTE: further instances of this message will not be shown
+==314867== 
+==314867== I   refs:      995,034,643
+==314867== I1  misses:          1,282
+==314867== LLi misses:          1,272
+==314867== I1  miss rate:        0.00%
+==314867== LLi miss rate:        0.00%
+==314867== 
+==314867== D   refs:      429,919,545  (272,549,503 rd   + 157,370,042 wr)
+==314867== D1  misses:      3,286,320  (  2,054,673 rd   +   1,231,647 wr)
+==314867== LLd misses:      3,277,892  (  2,047,741 rd   +   1,230,151 wr)
+==314867== D1  miss rate:         0.8% (        0.8%     +         0.8%  )
+==314867== LLd miss rate:         0.8% (        0.8%     +         0.8%  )
+==314867== 
+==314867== LL refs:         3,287,602  (  2,055,955 rd   +   1,231,647 wr)
+==314867== LL misses:       3,279,164  (  2,049,013 rd   +   1,230,151 wr)
+==314867== LL miss rate:          0.2% (        0.2%     +         0.8%  )

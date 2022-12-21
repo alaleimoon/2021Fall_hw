@@ -1,0 +1,13 @@
+#!/bin/bash
+# Conflicting trackpoints
+
+trap "/usr/bin/killall -q -u $USER ./TrackUnit 2>/dev/null" 0 1 2 3 9 15
+trap "/bin/rm -f $STDERR" 0 1 2 3 9 15
+if [ ! -x ./TrackUnit ]; then
+  echo './TrackUnit is missing or not executable'
+  echo './TrackUnit is missing or not executable' 1>&2
+  exit 1
+fi
+
+
+/c/cs474/bin/run -stderr=/dev/null ./TrackUnit 12 < /dev/null

@@ -1,0 +1,17 @@
+ESTIMATE of time to complete assignment: 20 hours
+
+      Time     Time
+Date  Started  Spent Work completed
+----  -------  ----  --------------
+10/08 06:30am  0:20  read assignment
+      06:50am  0:50  work on makefile
+      08:05am  0:45  work on track_create, track_destroy, track_size
+      08:50am  0:30  work on track_add_point, track_add_node_end, track_length
+      09:20am  0:30  work on track_get
+      12:00pm  2:40  work on track_for_each, track_merge
+10/09 08:40am  2:50  work on main
+      15:00pm  0:20  debug and work on -combine
+      15:20pm  1:20  finish debug combine, work on -closest
+      16:40pm  2:50  finish -closest, debug all
+               ----
+               12:55  TOTAL time spent

@@ -1,0 +1,130 @@
+
+Public test script for GPS (09/30/2021)
+
+***** Checking for warning messages *****
+Making -B ./GPS TrackUnit
+gcc -Wall -std=c99 -pedantic -g3   -c -o gps.o gps.c
+gcc -Wall -std=c99 -pedantic -g3   -c -o track.o track.c
+gcc -Wall -std=c99 -pedantic -g3   -c -o location.o location.c
+gcc -Wall -std=c99 -pedantic -g3   -c -o trackpoint.o trackpoint.c
+gcc -Wall -std=c99 -pedantic -g3   -c -o more_math.o more_math.c
+gcc -o  GPS gps.o track.o location.o trackpoint.o more_math.o -lm
+gcc -Wall -std=c99 -pedantic -g3   -c -o track_unit.o track_unit.c
+gcc -o  TrackUnit track_unit.o track.o location.o trackpoint.o more_math.o -lm
+
+Each test is either passed or failed; there is no partial credit.
+
+To execute the test labelled IJ, type one of the following commands
+depending on whether the file /c/cs223/hw3/Tests/tIJ is executable or not
+     /c/cs223/hw3/Tests/tIJ
+     ./GPS < /c/cs223/hw3/Tests/tIJ
+The answer expected is in /c/cs223/hw3/Tests/tIJ.out.
+
+
+           Unit Tests for Basic Functions (50 points)
+PASSED  001. track_create and track_destroy
+PASSED  002. track_add and track_get (matching timestamps)
+PASSED  003. track_add with nonincreasing timestamps
+PASSED  004. track_size
+PASSED  005. track_length (non-empty)
+PASSED  006. track_length (empty track)
+PASSED  007. track_get interpolated points
+PASSED  008. track_get out of bounds (too early)
+PASSED  009. track_for_each
+
+           Unit Tests for Basic Functions (50 points): 50 points
+
+           Unit Tests for track_merge (25 points)
+PASSED  010. Disjoint tracks
+PASSED  011. Overlap but distinct timestamps
+PASSED  012. Duplicate trackpoints
+PASSED  013. Conflicting trackpoints
+
+           Unit Tests for track_merge (25 points): 25 points
+
+           Valgrind for Unit Tests (25 points; not awarded to do-nothing submissions)
+PASSED  014. track_add and track_get
+PASSED  015. track_get interpolated points
+PASSED  016. track_get out of bounds (too early)
+PASSED  017. track_merge: disjoint tracks
+PASSED  018. track_merge: overlap but distinct timestamps
+PASSED  019. track_merge: duplicate trackpoints
+PASSED  020. track_merge: conflicting trackpoints
+
+           Valgrind for Unit Tests (25 points; not awarded to do-nothing submissions): 25 points
+
+           Unit Tests for track_closest_approach
+1c1
+< 15.9
+---
+> run './TrackUnit 13': segmentation fault
+Error: STDOUT differs from expected
+FAILED  021. track_closest_approach
+0a1,88
+> ==335273== Invalid read of size 8
+> ==335273==    at 0x403168: track_closest_approach (track.c:392)
+> ==335273==    by 0x4021F1: test_closest (track_unit.c:450)
+> ==335273==    by 0x401742: main (track_unit.c:166)
+> ==335273==  Address 0x4b920c8 is 8 bytes inside a block of size 56 free'd
+> ==335273==    at 0x48430E4: free (vg_replace_malloc.c:755)
+> ==335273==    by 0x40261A: track_destroy (track.c:69)
+> ==335273==    by 0x402F89: track_merge (track.c:335)
+> ==335273==    by 0x4030A5: track_closest_approach (track.c:383)
+Error: STDOUT differs from expected
+FAILED  022. valgrind
+
+           Unit Tests for track_closest_approach: 0 of 2 tests passed
+
+           GPS Executable
+PASSED  023. -combine
+1c1
+< 21
+---
+> 27
+Error: STDOUT differs from expected
+FAILED  024. -closest
+PASSED  025. -combine with valgrind
+PASSED  026. -closest with valgrind
+
+           GPS Executable: 3 of 4 tests passed
+
+           Invalid Inputs
+PASSED  027. No arguments
+PASSED  028. Missing filename
+PASSED  029. File not found
+PASSED  030. Latitude out of range
+PASSED  031. Invalid longitude
+PASSED  032. Missing timestamp
+PASSED  033. Extra whitespace
+PASSED  034. EOF after longitude
+
+           Invalid Inputs: 8 of 8 tests passed
+
+           Timing
+PASSED  035. track_merge
+
+           Timing: 1 of 1 tests passed
+
+               Deductions for Violating Specification (0 => no violation)
+
+End of Public Script
+
+ Total score at first checkpoint: 100
+ 12 of  15 Additional tests passed for GPS
+
+           Possible Deductions (assessed later as appropriate)
+              -100 Hard-coding to defeat autograder
+               -10 Deficient style (comments, identifiers, formatting, ...)
+                -5 Does not make
+                -5 Makefile missing
+                -5 Makefile incorrect
+                -1 Log file incorrectly named
+                -1 Log file lacks estimated time
+                -1 Log file lacks total time
+                -1 Log file lacks statement of major difficulties
+
+***** Checking log file *****
+Estimate: ESTIMATE of time to complete assignment: 20 hours
+Total: 12:55  TOTAL time spent
+
+***** Checking makefile *****

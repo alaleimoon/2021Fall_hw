@@ -1,0 +1,126 @@
+
+Public test script for TSP (09/16/2021)
+
+***** Checking for warning messages *****
+Making -B ./TSP
+gcc -Wall -std=c99 -pedantic -g3   -c -o tsp.o tsp.c
+gcc -Wall -std=c99 -pedantic -g3   -c -o location.o location.c
+gcc -o  TSP tsp.o location.o -lm
+
+Each test is either passed or failed; there is no partial credit.
+
+To execute the test labelled IJ, type one of the following commands
+depending on whether the file /c/cs223/hw2/Tests/tIJ is executable or not
+     /c/cs223/hw2/Tests/tIJ
+     ./TSP < /c/cs223/hw2/Tests/tIJ
+The answer expected is in /c/cs223/hw2/Tests/tIJ.out.
+
+
+           Avelo FL Destinations from HVN (36 points)
+PASSED  001. Given order
+PASSED  002. Farthest algorithm
+PASSED  003. Exchange adjacent algorithm
+
+           Avelo FL Destinations from HVN (36 points): 36 points
+
+           Additional Inputs (20 points)
+PASSED  004. Given
+PASSED  005. Farthest
+PASSED  006. Exchange adjacent
+PASSED  007. Farthest with ties
+
+           Additional Inputs (20 points): 20 points
+
+           Error Messages (24 points)
+PASSED  008. No arguments
+1c1
+< TSP: could not open do_not_submit_a_file_with_this_name.in
+---
+> TSP: invalid algorithm arguments
+Error: STDOUT differs from expected
+FAILED  009. File not found
+PASSED  010. No cities
+PASSED  011. Invalid method first
+PASSED  012. Missing exchange argument
+PASSED  013. Invalid exchange argument
+PASSED  014. Empty algorithm
+PASSED  015. Empty string for exchange argument
+
+           Error Messages (24 points): 21 points
+
+           Valgrind (20 points; not awarded to do-nothing submissions)
+PASSED  016. Given order
+PASSED  017. Farthest algorithm
+PASSED  018. Exchange adjacent algorithm
+PASSED  019. No cities
+PASSED  020. Missing exchange argument
+
+           Valgrind (20 points; not awarded to do-nothing submissions): 20 points
+
+           Exchange any
+PASSED  021. Example
+PASSED  022. 9 cities
+PASSED  023. 19 cities
+
+           Exchange any: 3 of 3 tests passed
+
+           Multiple Methods
+PASSED  024. All methods
+PASSED  025. All methods, Connecticut
+PASSED  026. Exchange adjacent, exchange any
+PASSED  027. Repeated methods
+PASSED  028. No methods
+
+           Multiple Methods: 5 of 5 tests passed
+
+           Additional Error messages
+PASSED  029. Missing exchange argument
+PASSED  030. Algorithm in place of exchange argument
+PASSED  031. Invalid exchange argument last
+PASSED  032. Multiple invalid methods
+PASSED  033. Multiple invalid exchange arguments
+1c1
+< TSP: could not open this_file_should_not_exist.in
+---
+> TSP: invalid algorithm arguments
+Error: STDOUT differs from expected
+FAILED  034. File not found and invalid algorithm
+
+           Additional Error messages: 5 of 6 tests passed
+
+           Large Inputs
+PASSED  035. 512 cities, farthest
+PASSED  036. 256 cities, exchange adjacent
+PASSED  037. 512 cities, exchange adjacent
+1c1
+< -exchange any     :    404656.00 RFD CGX TDZ FDY AXV MUT 1G4 LAS DWA A87 KHV MZG TOD KUA RRG AMP DUR NLA PNR LBQ BSG KGS SLS TGM KSC YXZ TVC RAC HPT ENV SUU A
+---
+> run './TSP /c/cs223/hw2/Tests/t038.in -exchange any': cputime limit exceeded
+Error: STDOUT differs from expected
+FAILED  038. 256 cities, exchange any
+
+           Large Inputs: 3 of 4 tests passed
+
+               Deductions for Violating Specification (0 => no violation)
+
+End of Public Script
+
+ Total score at first checkpoint:  97
+ 16 of  18 Additional tests passed for TSP
+
+           Possible Deductions (assessed later as appropriate)
+              -100 Hard-coding to defeat autograder
+               -10 Deficient style (comments, identifiers, formatting, ...)
+                -5 Does not make
+                -5 Makefile missing
+                -5 Makefile incorrect
+                -1 Log file incorrectly named
+                -1 Log file lacks estimated time
+                -1 Log file lacks total time
+                -1 Log file lacks statement of major difficulties
+
+***** Checking log file *****
+Estimate: ESTIMATE of time to complete assignment: 10 hours
+Total: 19:30  TOTAL time spent
+
+***** Checking makefile *****

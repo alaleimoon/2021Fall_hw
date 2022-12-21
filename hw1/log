@@ -1,0 +1,18 @@
+ESTIMATE of time to complete assignment: 10 hours
+
+      Time     Time
+Date  Started  Spent Work completed
+----  -------  ----  --------------
+9/12  11:30am  0:15  read assignment.
+9/12  11:45am  2:30  wrote code and refered to the Examples and Notes
+                     posted on CPSC 223 website, googling for how to end
+                     the process of scanf and how to use " or ' in the
+                     equation in C.
+9/12  14:15pm  1:45  finished debugging; program passes all public tests
+               ----
+               4:30  TOTAL time spent
+
+The first problem I found was how to end the scaning process, for the
+"while(!scanf())" is not working to stop correctly when it finishes reading the
+file. And I stuck for a while finding that the " and ' can not use as a single
+character in "" or ''.
